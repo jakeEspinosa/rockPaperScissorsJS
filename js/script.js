@@ -10,6 +10,7 @@ function getComputerSelection() {
   return computerSelection;
 }
 
+// return value is from the perspective of the player
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'rock') {
       return 'draw';
@@ -31,3 +32,39 @@ function playRound(playerSelection, computerSelection) {
         return 'draw';
     } 
 }
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {
+    let computerSelection = getComputerSelection();
+    let roundResult = playRound(getPlayerSelection(), computerSelection);
+
+    if (roundResult === 'win') {
+      console.log(`You won! The computer chose ${computerSelection}`);
+      playerScore++;
+    } else if (roundResult === 'loss') {
+      console.log(`You lost! The computer chose ${computerSelection}`);
+      computerScore++
+    } else {
+      console.log('It\'s a draw!');
+    }
+  }
+
+  if (playerScore > computerScore) {
+    console.log(`Your score: ${playerScore} \n` +
+                `Computer score: ${computerScore} \n` +
+                'Congrats! You won!');
+  } else if (playerScore < computerScore) {
+    console.log(`Your score: ${playerScore} \n` +
+                `Computer score: ${computerScore} \n` +
+                'Better luck next time! You lost!');
+  } else {
+    console.log(`Your score: ${playerScore} \n` +
+                `Computer score: ${computerScore} \n` +
+                'It\'s a draw!');
+  }
+}
+
+game();
