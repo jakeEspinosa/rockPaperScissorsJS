@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-let computerSelection;
 
 const playerScoreText = document.getElementById('your-score');
 const computerScoreText = document.getElementById('computer-score');
@@ -12,7 +11,7 @@ function getComputerSelection() {
   return computerSelection;
 }
 
-function updateScreen(result) {
+function updateScreen(result, computerSelection) {
   if (result === 'draw') {
     statusText.textContent = 'It\s a draw!';
   } else if (result === 'loss') {
@@ -34,48 +33,57 @@ function calculateWinner(score1, score2) {
   }
 }
 
-// return value is from the perspective of the player
 function playRound(playerSelection) {
-    computerSelection = getComputerSelection();
-    let roundResult;
-    if (playerSelection === 'rock' && computerSelection === 'rock') {
+  computerSelection = getComputerSelection();
+  let roundResult;
+
+  if (playerSelection === 'rock') {
+    if (computerSelection === 'rock') {
       let roundResult = 'draw';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection);        
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+     } else if (computerSelection === 'paper') {
       let roundResult = 'loss';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    } else {
       let roundResult = 'win';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    }
+  }
+  if (playerSelection === 'paper') {
+    if (computerSelection === 'rock') {
       let roundResult = 'win';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+    } else if (computerSelection === 'paper') {
       let roundResult = 'draw';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    } else {
       let roundResult = 'loss';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    }
+  }
+  if (playerSelection === 'scissors') {
+    if (computerSelection === 'rock') {
       let roundResult = 'loss';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    } else if (computerSelection === 'paper') {
       let roundResult = 'win';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
-    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+    } else {
       let roundResult = 'draw';
-      updateScreen(roundResult);
+      updateScreen(roundResult, computerSelection); 
       calculateWinner(playerScore, computerScore);
     } 
+  }
 }
+
 
 const rockButton = document.getElementById('rock');
 
