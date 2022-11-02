@@ -1,0 +1,57 @@
+
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #0066CC;
+}
+
+#main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 70px;
+
+}
+
+#results-container  {
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  width: 750px;
+  color: #FFFDD0;
+  font-size: xx-large;
+}
+
+#title {
+  font-size: xx-large;
+}
+
+.buttons {
+  background-color: #FFFDD0;
+  color: #0066CC;
+  font-size: x-large;
+}
+
+.buttons:active {
+  transform: scale(0.98);
+}
+
+#buttons {
+  display: flex;
+  gap: 45px;
+  border-radius: 15px;
+}
+
+.buttons {
+  border-radius: 8px;
+  height: 10vh;
+  width: 15vh;
+}
+
+#footer, #user-text {
+  color: #FFFDD0;
+}

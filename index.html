@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./js/script.js" defer></script>
 </head>
 <body>
 
-  <div id="buttons">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-  </div>
+  <div id="main-container">
 
-  <div id="results-container">
-    <div id="your-score">
-      Your score: 0
+    <div id="footer">© 2022, Espinosa Enterprises, LLC</div>
+
+    <div id="buttons">
+      <button class="buttons" id="rock">Rock</button>
+      <button class="buttons" id="paper">Paper</button>
+      <button class="buttons" id="scissors">Scissors</button>
     </div>
-    <div id="computer-score">
-      Computer Score: 0
+
+    <div id="results-container">
+      <div id="scores-container">
+        <div id="your-score">
+          Player score: 0
+        </div>
+        <div id="computer-score">
+          Computer score: 0
+        </div>
+      </div>
+
+      <div id="status-container">
+        <div id="status"></div>
+      </div>
     </div>
-    <div id="status"></div>
+
+    <div id="user-text">
+
+      <div id="title">
+        <h1>Rock Paper Scissors</h1>
+      </div>
+
+      <div id="instructions">
+        <h2>Press any of the buttons to play! First to 5 points wins!</h2>
+      </div>
+    
+    </div>
+
   </div>
   
 </body>
