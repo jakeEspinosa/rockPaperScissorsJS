@@ -13,7 +13,7 @@ function getComputerSelection() {
 
 function updateScreen(result, computerSelection) {
   if (result === 'draw') {
-    statusText.textContent = 'It\s a draw!';
+    statusText.textContent = 'It\'s a draw!';
   } else if (result === 'loss') {
     computerScore++;
     computerScoreText.textContent = `Computer score: ${computerScore}`;
