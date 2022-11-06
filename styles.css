@@ -12,7 +12,7 @@ body {
 #main-container {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 70px;
 
 }
